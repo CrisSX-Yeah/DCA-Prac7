@@ -1,25 +1,22 @@
 #include "catch.hpp"
 #include "StringUtils.hpp"
 
-TEST_CASE("Palindrome detection tests", "[palindrome]") {
+TEST_CASE("Simple palindromes", "[palindrome]") {
+    REQUIRE(StringUtils::isPalindrome("madam") == true);
+    REQUIRE(StringUtils::isPalindrome("racecar") == true);
+}
 
-    SECTION("Simple palindromes") {
-        REQUIRE(StringUtils::isPalindrome("madam") == true);
-        REQUIRE(StringUtils::isPalindrome("racecar") == true);
-    }
+TEST_CASE("Non-palindromes", "[palindrome]") {
+    REQUIRE(StringUtils::isPalindrome("hello") == false);
+    REQUIRE(StringUtils::isPalindrome("world") == false);
+}
 
-    SECTION("Non-palindromes") {
-        REQUIRE(StringUtils::isPalindrome("hello") == false);
-        REQUIRE(StringUtils::isPalindrome("world") == false);
-    }
+TEST_CASE("Palindromes with mixed cases and spaces", "[palindrome]") {
+    REQUIRE(StringUtils::isPalindrome("A man a plan a canal Panama") == true);
+    REQUIRE(StringUtils::isPalindrome("No lemon, no melon") == true);
+}
 
-    SECTION("Palindromes with mixed cases and spaces") {
-        REQUIRE(StringUtils::isPalindrome("A man a plan a canal Panama") == true);
-        REQUIRE(StringUtils::isPalindrome("No lemon, no melon") == true);
-    }
-
-    SECTION("Empty and single character strings") {
-        REQUIRE(StringUtils::isPalindrome("") == true);
-        REQUIRE(StringUtils::isPalindrome("a") == true);
-    }
+TEST_CASE("Empty and single character strings", "[palindrome]") {
+    REQUIRE(StringUtils::isPalindrome("") == true);
+    REQUIRE(StringUtils::isPalindrome("a") == true);
 }
