@@ -1,3 +1,6 @@
+#include "catch.hpp"
+#include "StringUtils.hpp"
+
 TEST_CASE("String reversal tests", "[reverse]") {
 
     SECTION("Reverse a regular string") {
