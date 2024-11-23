@@ -1,0 +1,514 @@
+Prompt1
+
+
+Dada la siguiente información:
+
+"
+
+Test…​Test…​Test…​ Did I say Test?
+Quédate con lo que dice esta cita:
+
+"Test early. Test Often. Test Automatically.  Tests that run
+  with every build are much more effective than test plans
+  that sit on a shelf."
+Los chicos de sqlite parece que se lo han tomado en serio:
+
+The reliability and robustness of SQLite is achieved in part by
+thorough and careful testing.
+As of version 3.42.0 (2023-05-16), the SQLite library consists of
+approximately 155.8 KSLOC of C code. (KSLOC means thousands of
+"Source Lines Of Code" or, in other words, lines of code excluding
+blank lines and comments.) By comparison, the project has 590
+times as much test code and test scripts - 92053.1 KSLOC.
+— SQL database engine developers
+How SQLite Is Tested
+Testea tanto como puedas.
+Es mucho mejor descubrir los fallos de nuestro código en una fase de testeo que cuando ya está en producción.
+
+Que no se te quede esta cara delante de tu jef@, o peor, de un cliente:
+
+
+
+
+
+
+Preliminares (I)
+El propósito del paso de tests es demostrar que en nuestro software existen fallos, no que está libre de ellos.
+
+"Program testing can be used to show the presence of bugs, but
+never to show their absence!"
+— Edsger Dijkstra
+Por tanto el paso de tests a nuestro software es una técnica para hacer que falle…​no para ver lo maravilloso que es.
+
+Comprobar un programa consiste en ver si su comportamiento es correcto para cualquier posible entrada que pueda tener y dado que esto es imposible, debemos comprobarlo para todas aquellas entradas que tengan una probabilidad razonable de hacer que falle ( si es que tiene un fallo ).
+
+Preliminares (II)
+A este conjunto de entradas es a lo que llamamos un "Test Suite".
+
+Se debe procurar que no le lleven al programa mucho tiempo en su ejecución.
+
+La clave para conseguir un test suite apropiado es particionar el espacio de todas las posibles entradas en subconjuntos que proporcionan información equivalente sobre la corrección del programa y crear el test suite con una entrada de cada uno de estos subconjuntos.
+
+Esto es prácticamente imposible…​así que hay que emplear algunas heurísticas para obtener el test suite.
+
+Una forma de conseguir acercarnos al test suite perfecto sería haciendo una partición del conjunto de datos de entrada en subconjuntos de manera que cada elemento del conjunto original perteneciera exactamente a uno de estos subconjuntos.
+
+Preliminares (III)
+Un ejemplo, la función: es_mayor (x, y).
+
+Conjunto de entrada original
+Todos los posibles pares "x" e "y" de enteros.
+
+Una posible partición:
+x positivo, y positivo
+
+x negativo, y negativo
+
+x positivo, y negativo
+
+x negativo, y positivo
+
+x == 0, y == 0
+
+x == 0, y != 0
+
+x != 0, y == 0
+
+Si ahora comprobamos la función es_mayor (x, y) con una entrada de, al menos uno de, estos subconjuntos tendríamos una probabilidad razonable de que aparecería un fallo si existiera…​pero no una garantía absoluta!
+
+Tipos de tests
+BlackBox testing:
+Se crean sin mirar el código a testear. Se basan en la especificación de lo que debe hacer el código.
+
+Permiten que programadores del código y de los tests sean distintos.
+
+Son robustos respecto a cambios en la implementación del código a testear.
+
+Son los tipos de tests que habitualmente se pasan a las prácticas.
+
+WhiteBox o GlassBox testing:
+Se tiene acceso al código a testear.
+
+Complementan a los anteriores y son más fáciles de crear que aquellos.
+
+Al tener acceso al código debemos fijarnos al construir los tests en las sentencias if-then-else, bucles, try-catch presentes en el código a testear.
+
+Qué testear
+En base a la granularidad de lo que comprueban:
+
+Tests unitarios
+Están destinados a módulos individuales, p.e. clases.
+
+Tests de integración
+Evalúan cómo se ejecutan una serie de módulos cuando interactúan. Échale un vistazo a éste vídeo y verás las consecuencias que puede tener preparar y pasar tests unitarios pero no tener o no hacer bien los tests de integración.
+
+Tests del sistema
+Evalúan todo el sistema al completo.
+
+Otros tests
+Agotamiento de recursos. Errores y recuperación.
+
+Rendimiento
+
+Usabilidad. Son un tipo de tests diferentes a los anteriores.
+
+Cómo testear
+Tests de regresión
+El nuevo código no debe estropear lo que ya funcionaba.
+
+Tests de datos
+Datos reales y sintéticos…​¿alguien dijo 30 de febrero?
+
+Tests del Interfaz de Usuario
+GUI
+
+Tests _de los tests
+¡La alarma tiene que sonar cuando debe hacerlo! (echa un vistazo a las prácticas en grupo, concretamente a Yarn ).
+
+"Use saboteurs to Test Your Testing"
+
+— Pragmatic Programmer
+Q.R.G. Tip 64
+Tests minuciosos. Cobertura de un test.
+
+int test (int a, int b) { return a / (a+b); }
+Cúando testear
+Nunca dejarlo para el final, menos aún cerca de un deadline.
+
+Debería hacerse automáticamente…​incluida la interpretación de los datos.
+
+Suele ser habitual convertir el paso de los tests en un objetivo de make: make test.
+
+No todos los tests se pueden pasar tan seguidamente ( stress tests ), pero esto se puede tener en cuenta y automatizar.
+
+Ahh!, una cosa más: Si una persona detecta un fallo…​debería ser la última persona que detecta ese fallo…​inmediatamente deberíamos tener un test para capturarlo.
+
+Cobertura de un test.
+Se trata de una medida empleada con tests tipo WhiteBox.
+
+Trata de estimar cuánta funcionalidad se ha testeado.
+
+Suele medir el porcentaje de instrucciones testeadas ( Instruction coverage ) y el porcentaje de ramas del código usadas ( Branch coverage ).
+
+Para tests tipo BlackBox se suele medir el porcentaje de la especificación testeado ( Specification coverage ).
+
+Test drivers. Conducting tests.
+Hoy en día los procesos de testeo están automatizados.
+
+Los tests se pasan empleando test drivers, los cuales…​
+
+Preparan el entorno para invocar el programa o unidad a testear.
+
+Invocan el programa o unidad a testear con un conjunto de datos de entrada.
+
+Guardan los resultados de esta ejecución
+
+Comprueban la validez de estos resultados
+
+Preparan el informe apropiado.
+
+Test drivers. xUnit (I).
+Es el termino empleado para describir una serie de herramientas de test que se comportan de manera similar.
+
+Tienen su origen en SUnit creado por Kent Beck para Smalltalk. Squeak es una implementación de código abierto de un entorno de programación Smalltalk muy similar al original.
+
+Posteriormente SUnit se portó a Java bajo el nombre JUnit.
+
+Disponemos de versiones de xUnit para ".Net" (NUnit), "C++" (cxxtest), etc…​
+
+Test drivers. xUnit (II).
+Conceptos empleados en entornos tipo xUnit:
+Test runner
+El encargado de ejecutar los tests y proporcionar los resultados.
+
+Test case
+Cada uno de los tests pasados al software.
+
+Test fixtures
+También llamado test context, garantiza las precondiciones necesarias para ejecutar un test y que el "estado" se restaura al original tras ejecutar el test.
+
+Test suites
+Conjunto de tests que comparten el mismo "fixture". El orden de los tests no debería importar.
+
+Test execution
+Es la ejecución de cada uno de los tests individuales.
+
+Caso de uso: junit (I).
+Ya lo conocemos de asignaturas como Programación-3
+package modelo;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CoordenadaTest {
+Coordenada c;
+
+@Before
+public void setUp() throws Exception { c = new Coordenada(10, 5); }
+@After
+public void tearDown() throws Exception { ... }
+
+@BeforeClass
+public static void setUpClass() throws Exception {
+  /* Code executed before the first test method */
+}
+
+@AfterClass
+public static void tearDownClass() throws Exception {
+  /* Code executed after the last test method */
+}
+Caso de uso: junit (II).
+...
+@Test
+public final void testGetX() {
+  assertEquals("x", 10, c.getX(), 0.001);
+}
+
+@Test
+public final void testGetY() {
+  assertEquals("y", 5, c.getY(), 0.001);
+}
+
+@Test
+public final void testConstructorCopia() {
+        Coordenada c2 = new Coordenada(c);
+        assertEquals("c2.x", c2.getX(), c.getX(), 0.001);
+        assertEquals("c2.y", c2.getY(), c.getY(), 0.001);
+}
+
+@Test
+public final void testInicializacion() {
+        Coordenada c3 = new Coordenada();
+        assertEquals("c3.x", Coordenada.VACIO, c3.getX(), 0.001);
+        assertEquals("c3.y", Coordenada.VACIO, c3.getY(), 0.001);
+}
+}
+Caso de uso: catch2 (I).
+Es un entorno de testeo para C++.
+
+Disponemos de dos versiones estables, la de la rama 2.x y la actual.
+
+A efectos de las prácticas usaremos la versión 2.x de catch2.
+
+Se distribuye como una única cabecera, por tanto no necesita enlazarse con ninguna biblioteca adicional.
+
+Esta cabecera la puedes descargar desde aquí.
+
+Caso de uso: catch2 (II).
+Aquí puedes ver diversos proyectos que usan catch2 actualmente.
+
+Veamos algunos ejemplos.
+
+Echa un vistazo a la implementación de BDD que proporciona.
+
+Aquí tienes la documentación para la versión 2.x de Catch2. Ten esto en cuenta si quieres que catch2 defina la función main (su propio test driver).
+
+Para obtener fixtures mas elaborados consulta esta documentación.
+
+Caso de uso: boost::test (I).
+Es una de las bibliotecas de Boost.
+
+Su página
+
+Puede convertirse en el marco de tests estandar para C++.
+
+Caso de uso: boost::test (II).
+#define BOOST_TEST_MODULE poo-p1 test
+#include <boost/test/unit_test.hpp>
+#include <boost/test/tools/output_test_stream.hpp>
+
+#include <sstream>
+#include <Punto.h>
+#include <Posicion.h>
+#include <Aplicacion.h>
+using boost::test_tools::output_test_stream;
+BOOST_AUTO_TEST_SUITE ( punto_ts )    // Inicio del test suite
+
+struct F {
+  F() {
+    BOOST_TEST_MESSAGE( " setup fixture" );
+    p0 = new Punto;
+    p1 = new Punto(*p0);
+  }
+
+  ~F() {
+    delete p0; p0 = NULL;
+    delete p1; p1 = NULL;
+    BOOST_TEST_MESSAGE( " teardown fixture" );
+  }
+
+  Punto* p0;  Punto* p1;
+};
+Caso de uso: boost::test (III).
+BOOST_FIXTURE_TEST_CASE( constructores_fxt, F )
+{
+                                        // 1 //
+  BOOST_CHECK_EQUAL ( p0->getX (), 0.0 );
+  BOOST_CHECK_EQUAL ( p0->getY (), 0.0 );
+
+                                        // 2 //
+  BOOST_CHECK_EQUAL ( p1->getX (), 0.0 );
+  BOOST_CHECK_EQUAL ( p1->getY (), 0.0 );
+
+  p0->setX (2.3);
+  BOOST_CHECK_EQUAL ( p0->getX (), 2.3 );
+  p0->setY (4.2);
+  BOOST_CHECK_EQUAL ( p0->getY (), 4.2 );
+}
+Caso de uso: boost::test (IV).
+BOOST_AUTO_TEST_CASE( constructores )
+{
+  Punto p0;                             // 1 //
+  BOOST_CHECK_EQUAL ( p0.getX (), 0.0 );
+  BOOST_CHECK_EQUAL ( p0.getY (), 0.0 );
+
+  Punto p1 (p0);                        // 2 //
+  BOOST_CHECK_EQUAL ( p1.getX (), 0.0 );
+  BOOST_CHECK_EQUAL ( p1.getY (), 0.0 );
+
+  p0.setX (2.3);
+  BOOST_CHECK_EQUAL ( p0.getX (), 2.3 );
+  p0.setY (4.2);
+  BOOST_CHECK_EQUAL ( p0.getY (), 4.2 );
+}
+BOOST_AUTO_TEST_SUITE_END ()    // Fin del test suite
+Caso de uso: boost::test (V).
+Boost::test puede ser usada de dos (en realidad 3) maneras:
+
+Incluyendo una única cabecera.
+
+Incluyendo una cabecera y enlazando con la biblioteca Unit Test Framework de manera estática o dinámica. Para enlazar con esta biblioteca usaremos:
+
+-lboost_test_exec_monitor
+Los test runners creados se pueden ejecutar con la opción --help, p.e.:
+
+./poo-p1-test --help
+En el ejemplo que vamos a ver se ejecutan así:
+
+./poo-p1-test --log_level=test_suite [--run_test=punto_ts]
+Caso de uso: GLib.Test (I).
+La biblioteca GLib ( escrita y pensada para desarrollar en "C" ) incorpora un mecanismo de paso de tests: GLib.Testing.
+
+Es posible que una adaptación de GLib a otro lenguaje de programación nos de acceso al uso de ese marco de tests, p.e. es el caso de Vala.
+
+Nos permite crear casos de test individuales y test suites a los que ir incoporando estos tests.
+
+Veamos un ejemplo sencillo haciendo uso de Vala. Creamos una calculadora de juguete.
+
+Caso de uso: GLib.Test (II).
+/*
+ * Clase que representa la calculadora.
+ */
+
+public errordomain CalculatorError {
+  INVALID_OPERATION,
+  INVALID_EXPRESSION
+}
+
+public class Calculator : Object {
+       public static int plus (int a, int b) {
+    return a + b;
+  }
+
+  public static int minus (int a, int b) {
+    return a - b;
+  }
+
+  public static int multiply (int a, int b) {
+    return a * b;
+  }
+Caso de uso: GLib.Test (III).
+public static int evaluate (string input) throws CalculatorError {
+  try {
+    var regex = new Regex ("(\\d+)\\W*([\\+\\-\\*])\\W*(\\d+)");
+    MatchInfo match;
+    if (!regex.match (input, 0, out match)) {
+          throw new CalculatorError.INVALID_EXPRESSION
+          ( "Invalid expression: %s", input );
+    }
+    var arg1 = int.parse(match.fetch (1));
+    var op = match.fetch (2);
+    var arg2 = int.parse(match.fetch (3));
+
+    switch (op) {
+      case "+":
+        return plus (arg1, arg2);
+      case "-":
+        return minus (arg1, arg2);
+      case "*":
+        return multiply (arg1, arg2);
+      default:
+        throw new CalculatorError.INVALID_OPERATION ("Invalid operation %s", op);
+    }
+  } catch (RegexError e) { error(e.message); }
+}
+Caso de uso: GLib.Test (IV).
+/*
+ * Un programa de prueba.
+ */
+ public static void main () {
+    while (true) {
+       string? expression = stdin.read_line ();
+       if (expression != null) {
+         try {
+            int value = Calculator.evaluate (expression);
+            stdout.printf (" = %d", value);
+         } catch (CalculatorError e) {
+            stdout.printf ("%s", e.message);
+         }
+       }
+    }
+}
+Caso de uso: GLib.Test (V).
+/*
+ * Paso de los tests
+ */
+ public class TestCalculator : Object {
+   public static void test_add () {
+     assert (2 == Calculator.plus (1, 1));
+     assert (8 == Calculator.plus (7, 1));
+   }
+
+   public static void test_minus () {
+     assert (3 == Calculator.minus (3, 1));
+     assert (-6 == Calculator.minus (1, 7));
+   }
+
+   public static void test_multiply () {
+     stdout.printf ("Inside fixture ");
+     assert (1 == Calculator.multiply (1, 1));
+     assert (84 == Calculator.multiply (7, 12));
+     assert (0 == Calculator.multiply (0, 12));
+   }
+}
+Caso de uso: GLib.Test (VI).
+static void fixture_setup () { stdout.printf ("FIXture setup"); }
+static void fixture_teardown () { stdout.printf ("FIXture teardown");}
+
+public static void main (string[] args) {
+  Test.init (ref args);
+
+  TestCase tc = new TestCase ("TC1", fixture_setup, test_multiply, fixture_teardown);
+  TestSuite.get_root().add(tc);
+
+  Test.add_func ("/calculator/add", test_add);
+  Test.add_func ("/calculator/minus", test_minus);
+  Test.add_func ("/calculator/multiply", test_multiply);
+
+  Test.run ();
+ }
+Caso de uso: GLib.Test (VII).
+$ test/calculator-test
+/TC1: FIXture setup
+Inside fixture
+FIXture teardown
+OK
+/calculator/add: OK
+/calculator/minus: **
+ERROR:calculator_test.c:71:test_calculator_test_minus: assertion failed:
+      (3 == Calculator.minus (3, 1))
+Abortado
+Integracion de paso de tests con Autotools / Cmake.
+Ambos entornos de configuración facilitan el paso de tests al software que construyen.
+
+CMake: Mediante una herramienta adicional (CTest) que se integra con CMake. Añadimos la llamada a enable_testing() en el CMakeLists.txt principal y aquellos ejecutables que sean un test se le indican a cmake mediante add_test(...).
+
+Autotools: Mediante la introducción de un "primary" nuevo llamado "check", de manera que disponemos de una variable nueva llamada "check_PROGRAMS".
+
+Veamos cada uno de ellos con un ejemplo.
+
+Lenguajes que incluyen tests
+Cada vez más lenguajes incluyen el paso de tests.
+Es decir sin necesidad de recurrir a bibliotecas externas
+
+Veamos algún ejemplo:
+
+Lenguaje D: tests unitarios
+
+Rust: test unitarios y de integración
+
+Zig: Zig Test
+
+En algunos lenguajes puedes escribir tests formando parte de la documentación del código.
+
+
+"
+
+
+
+Tú tarea es la siguiente:
+
+
+
+"
+Crea un programa en C o C++ y crea una serie de test suites y tests con catch2. DEBES de crear MÚLTIPLES test suites y dentro de cada test suite deben de haber MÚLTIPLES tests diferentes. Intégralo con autoconf automake y con cmake+ctest (make test).
+
+Al mismo código del ejercicio anterior añade una serie de test suites y tests con boost::testing. DEBES de crear MÚLTIPLES test suites y dentro de cada test suite deben de haber MÚLTIPLES tests diferentes. Intégralo de nuevo con autoconf + automake y con cmake (make test).
+
+"
+
+
+Estoy trabajando en Ubuntu 20.04.6 LTS
+
+Dada toda esta información, adelante, haz tu trabajo. Debes de darme todo el código completo (DEBES DE ELEGIR UN PROGRAMA DIFERENTE A LA CALCULADORA). Además, debes de indicarme de forma clara y concisa cada uno de los pasos a seguir, las rutas desde donde ejecutar cada comando, el nombre de los ficheros que debo de crear, todos los comandos que debo de ejecutar, entre otros detalles que sean importantes para la ejecución completa de la tarea propuesta.
