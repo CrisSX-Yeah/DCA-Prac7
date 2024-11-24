@@ -122,6 +122,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test/CMakeFiles/test_palindrome_boost.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_palindrome_boost.dir/rule
+.PHONY : test/CMakeFiles/test_palindrome_boost.dir/rule
+
+# Convenience name for target.
+test_palindrome_boost: test/CMakeFiles/test_palindrome_boost.dir/rule
+
+.PHONY : test_palindrome_boost
+
+# fast build rule for target.
+test_palindrome_boost/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/build
+.PHONY : test_palindrome_boost/fast
+
+# Convenience name for target.
+test/CMakeFiles/test_vowels_boost.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_vowels_boost.dir/rule
+.PHONY : test/CMakeFiles/test_vowels_boost.dir/rule
+
+# Convenience name for target.
+test_vowels_boost: test/CMakeFiles/test_vowels_boost.dir/rule
+
+.PHONY : test_vowels_boost
+
+# fast build rule for target.
+test_vowels_boost/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/build
+.PHONY : test_vowels_boost/fast
+
+# Convenience name for target.
+test/CMakeFiles/test_reverse_boost.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reverse_boost.dir/rule
+.PHONY : test/CMakeFiles/test_reverse_boost.dir/rule
+
+# Convenience name for target.
+test_reverse_boost: test/CMakeFiles/test_reverse_boost.dir/rule
+
+.PHONY : test_reverse_boost
+
+# fast build rule for target.
+test_reverse_boost/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/build
+.PHONY : test_reverse_boost/fast
+
+# Convenience name for target.
 test/CMakeFiles/test_vowels.dir/rule:
 	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_vowels.dir/rule
 .PHONY : test/CMakeFiles/test_vowels.dir/rule
@@ -226,6 +271,33 @@ test_palindrome.cpp.s:
 	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/test_palindrome.cpp.s
 .PHONY : test_palindrome.cpp.s
 
+test_palindrome_boost.o: test_palindrome_boost.cpp.o
+
+.PHONY : test_palindrome_boost.o
+
+# target to build an object file
+test_palindrome_boost.cpp.o:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/test_palindrome_boost.cpp.o
+.PHONY : test_palindrome_boost.cpp.o
+
+test_palindrome_boost.i: test_palindrome_boost.cpp.i
+
+.PHONY : test_palindrome_boost.i
+
+# target to preprocess a source file
+test_palindrome_boost.cpp.i:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/test_palindrome_boost.cpp.i
+.PHONY : test_palindrome_boost.cpp.i
+
+test_palindrome_boost.s: test_palindrome_boost.cpp.s
+
+.PHONY : test_palindrome_boost.s
+
+# target to generate assembly for a file
+test_palindrome_boost.cpp.s:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/test_palindrome_boost.cpp.s
+.PHONY : test_palindrome_boost.cpp.s
+
 test_reverse.o: test_reverse.cpp.o
 
 .PHONY : test_reverse.o
@@ -252,6 +324,33 @@ test_reverse.s: test_reverse.cpp.s
 test_reverse.cpp.s:
 	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/test_reverse.cpp.s
 .PHONY : test_reverse.cpp.s
+
+test_reverse_boost.o: test_reverse_boost.cpp.o
+
+.PHONY : test_reverse_boost.o
+
+# target to build an object file
+test_reverse_boost.cpp.o:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/test_reverse_boost.cpp.o
+.PHONY : test_reverse_boost.cpp.o
+
+test_reverse_boost.i: test_reverse_boost.cpp.i
+
+.PHONY : test_reverse_boost.i
+
+# target to preprocess a source file
+test_reverse_boost.cpp.i:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/test_reverse_boost.cpp.i
+.PHONY : test_reverse_boost.cpp.i
+
+test_reverse_boost.s: test_reverse_boost.cpp.s
+
+.PHONY : test_reverse_boost.s
+
+# target to generate assembly for a file
+test_reverse_boost.cpp.s:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/test_reverse_boost.cpp.s
+.PHONY : test_reverse_boost.cpp.s
 
 test_vowels.o: test_vowels.cpp.o
 
@@ -280,6 +379,33 @@ test_vowels.cpp.s:
 	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/test_vowels.cpp.s
 .PHONY : test_vowels.cpp.s
 
+test_vowels_boost.o: test_vowels_boost.cpp.o
+
+.PHONY : test_vowels_boost.o
+
+# target to build an object file
+test_vowels_boost.cpp.o:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/test_vowels_boost.cpp.o
+.PHONY : test_vowels_boost.cpp.o
+
+test_vowels_boost.i: test_vowels_boost.cpp.i
+
+.PHONY : test_vowels_boost.i
+
+# target to preprocess a source file
+test_vowels_boost.cpp.i:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/test_vowels_boost.cpp.i
+.PHONY : test_vowels_boost.cpp.i
+
+test_vowels_boost.s: test_vowels_boost.cpp.s
+
+.PHONY : test_vowels_boost.s
+
+# target to generate assembly for a file
+test_vowels_boost.cpp.s:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/test_vowels_boost.cpp.s
+.PHONY : test_vowels_boost.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -287,6 +413,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_palindrome_boost"
+	@echo "... test_vowels_boost"
+	@echo "... test_reverse_boost"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... test_vowels"
@@ -298,12 +427,21 @@ help:
 	@echo "... test_palindrome.o"
 	@echo "... test_palindrome.i"
 	@echo "... test_palindrome.s"
+	@echo "... test_palindrome_boost.o"
+	@echo "... test_palindrome_boost.i"
+	@echo "... test_palindrome_boost.s"
 	@echo "... test_reverse.o"
 	@echo "... test_reverse.i"
 	@echo "... test_reverse.s"
+	@echo "... test_reverse_boost.o"
+	@echo "... test_reverse_boost.i"
+	@echo "... test_reverse_boost.s"
 	@echo "... test_vowels.o"
 	@echo "... test_vowels.i"
 	@echo "... test_vowels.s"
+	@echo "... test_vowels_boost.o"
+	@echo "... test_vowels_boost.i"
+	@echo "... test_vowels_boost.s"
 .PHONY : help
 
 

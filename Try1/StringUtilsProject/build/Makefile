@@ -135,6 +135,45 @@ stringutils/fast:
 .PHONY : stringutils/fast
 
 #=============================================================================
+# Target rules for targets named test_palindrome_boost
+
+# Build rule for target.
+test_palindrome_boost: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_palindrome_boost
+.PHONY : test_palindrome_boost
+
+# fast build rule for target.
+test_palindrome_boost/fast:
+	$(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/build
+.PHONY : test_palindrome_boost/fast
+
+#=============================================================================
+# Target rules for targets named test_vowels_boost
+
+# Build rule for target.
+test_vowels_boost: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_vowels_boost
+.PHONY : test_vowels_boost
+
+# fast build rule for target.
+test_vowels_boost/fast:
+	$(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/build
+.PHONY : test_vowels_boost/fast
+
+#=============================================================================
+# Target rules for targets named test_reverse_boost
+
+# Build rule for target.
+test_reverse_boost: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_reverse_boost
+.PHONY : test_reverse_boost
+
+# fast build rule for target.
+test_reverse_boost/fast:
+	$(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/build
+.PHONY : test_reverse_boost/fast
+
+#=============================================================================
 # Target rules for targets named test_vowels
 
 # Build rule for target.
@@ -183,6 +222,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... stringutils"
+	@echo "... test_palindrome_boost"
+	@echo "... test_vowels_boost"
+	@echo "... test_reverse_boost"
 	@echo "... test_vowels"
 	@echo "... test_palindrome"
 	@echo "... test_reverse"

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/StringUtils.hpp
+string
+-
+
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/test/test_vowels_boost.cpp
+boost/test/included/unit_test.hpp
+-
+StringUtils.hpp
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/test/StringUtils.hpp
+

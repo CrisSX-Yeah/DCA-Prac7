@@ -1,10 +1,10 @@
-Start testing: Nov 24 01:43 CET
+Start testing: Nov 24 01:47 CET
 ----------------------------------------------------------
-1/3 Testing: ReverseTests
-1/3 Test: ReverseTests
+1/6 Testing: ReverseTests
+1/6 Test: ReverseTests
 Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_reverse"
 Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
-"ReverseTests" start time: Nov 24 01:43 CET
+"ReverseTests" start time: Nov 24 01:47 CET
 Output:
 ----------------------------------------------------------
 ===============================================================================
@@ -14,15 +14,15 @@ All tests passed (5 assertions in 4 test cases)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ReverseTests" end time: Nov 24 01:43 CET
+"ReverseTests" end time: Nov 24 01:47 CET
 "ReverseTests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/3 Testing: PalindromeTests
-2/3 Test: PalindromeTests
+2/6 Testing: PalindromeTests
+2/6 Test: PalindromeTests
 Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_palindrome"
 Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
-"PalindromeTests" start time: Nov 24 01:43 CET
+"PalindromeTests" start time: Nov 24 01:47 CET
 Output:
 ----------------------------------------------------------
 ===============================================================================
@@ -32,15 +32,15 @@ All tests passed (8 assertions in 4 test cases)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"PalindromeTests" end time: Nov 24 01:43 CET
+"PalindromeTests" end time: Nov 24 01:47 CET
 "PalindromeTests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/3 Testing: VowelTests
-3/3 Test: VowelTests
+3/6 Testing: VowelTests
+3/6 Test: VowelTests
 Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_vowels"
 Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
-"VowelTests" start time: Nov 24 01:43 CET
+"VowelTests" start time: Nov 24 01:47 CET
 Output:
 ----------------------------------------------------------
 ===============================================================================
@@ -50,8 +50,65 @@ All tests passed (6 assertions in 4 test cases)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"VowelTests" end time: Nov 24 01:43 CET
+"VowelTests" end time: Nov 24 01:47 CET
 "VowelTests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 24 01:43 CET
+4/6 Testing: ReverseTests_Boost
+4/6 Test: ReverseTests_Boost
+Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_reverse_boost"
+Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
+"ReverseTests_Boost" start time: Nov 24 01:47 CET
+Output:
+----------------------------------------------------------
+Running 4 test cases...
+
+[1;32;49m*** No errors detected
+[0;39;49m
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ReverseTests_Boost" end time: Nov 24 01:47 CET
+"ReverseTests_Boost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: PalindromeTests_Boost
+5/6 Test: PalindromeTests_Boost
+Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_palindrome_boost"
+Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
+"PalindromeTests_Boost" start time: Nov 24 01:47 CET
+Output:
+----------------------------------------------------------
+Running 4 test cases...
+
+[1;32;49m*** No errors detected
+[0;39;49m
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PalindromeTests_Boost" end time: Nov 24 01:47 CET
+"PalindromeTests_Boost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: VowelTests_Boost
+6/6 Test: VowelTests_Boost
+Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/test_vowels_boost"
+Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
+"VowelTests_Boost" start time: Nov 24 01:47 CET
+Output:
+----------------------------------------------------------
+Running 4 test cases...
+
+[1;32;49m*** No errors detected
+[0;39;49m
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"VowelTests_Boost" end time: Nov 24 01:47 CET
+"VowelTests_Boost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 24 01:47 CET

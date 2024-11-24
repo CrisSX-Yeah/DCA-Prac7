@@ -92,6 +92,9 @@ src/clean: src/CMakeFiles/stringutils.dir/clean
 # Directory level rules for directory test
 
 # Recursive "all" directory target.
+test/all: test/CMakeFiles/test_palindrome_boost.dir/all
+test/all: test/CMakeFiles/test_vowels_boost.dir/all
+test/all: test/CMakeFiles/test_reverse_boost.dir/all
 test/all: test/CMakeFiles/test_vowels.dir/all
 test/all: test/CMakeFiles/test_palindrome.dir/all
 test/all: test/CMakeFiles/test_reverse.dir/all
@@ -104,6 +107,9 @@ test/preinstall:
 .PHONY : test/preinstall
 
 # Recursive "clean" directory target.
+test/clean: test/CMakeFiles/test_palindrome_boost.dir/clean
+test/clean: test/CMakeFiles/test_vowels_boost.dir/clean
+test/clean: test/CMakeFiles/test_reverse_boost.dir/clean
 test/clean: test/CMakeFiles/test_vowels.dir/clean
 test/clean: test/CMakeFiles/test_palindrome.dir/clean
 test/clean: test/CMakeFiles/test_reverse.dir/clean
@@ -138,13 +144,94 @@ src/CMakeFiles/stringutils.dir/clean:
 .PHONY : src/CMakeFiles/stringutils.dir/clean
 
 #=============================================================================
+# Target rules for target test/CMakeFiles/test_palindrome_boost.dir
+
+# All Build rule for target.
+test/CMakeFiles/test_palindrome_boost.dir/all: src/CMakeFiles/stringutils.dir/all
+	$(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/depend
+	$(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=6,7 "Built target test_palindrome_boost"
+.PHONY : test/CMakeFiles/test_palindrome_boost.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/test_palindrome_boost.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_palindrome_boost.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/test_palindrome_boost.dir/rule
+
+# Convenience name for target.
+test_palindrome_boost: test/CMakeFiles/test_palindrome_boost.dir/rule
+
+.PHONY : test_palindrome_boost
+
+# clean rule for target.
+test/CMakeFiles/test_palindrome_boost.dir/clean:
+	$(MAKE) -f test/CMakeFiles/test_palindrome_boost.dir/build.make test/CMakeFiles/test_palindrome_boost.dir/clean
+.PHONY : test/CMakeFiles/test_palindrome_boost.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/test_vowels_boost.dir
+
+# All Build rule for target.
+test/CMakeFiles/test_vowels_boost.dir/all: src/CMakeFiles/stringutils.dir/all
+	$(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/depend
+	$(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=16,17 "Built target test_vowels_boost"
+.PHONY : test/CMakeFiles/test_vowels_boost.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/test_vowels_boost.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_vowels_boost.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/test_vowels_boost.dir/rule
+
+# Convenience name for target.
+test_vowels_boost: test/CMakeFiles/test_vowels_boost.dir/rule
+
+.PHONY : test_vowels_boost
+
+# clean rule for target.
+test/CMakeFiles/test_vowels_boost.dir/clean:
+	$(MAKE) -f test/CMakeFiles/test_vowels_boost.dir/build.make test/CMakeFiles/test_vowels_boost.dir/clean
+.PHONY : test/CMakeFiles/test_vowels_boost.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/test_reverse_boost.dir
+
+# All Build rule for target.
+test/CMakeFiles/test_reverse_boost.dir/all: src/CMakeFiles/stringutils.dir/all
+	$(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/depend
+	$(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=11,12 "Built target test_reverse_boost"
+.PHONY : test/CMakeFiles/test_reverse_boost.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/test_reverse_boost.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reverse_boost.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/test_reverse_boost.dir/rule
+
+# Convenience name for target.
+test_reverse_boost: test/CMakeFiles/test_reverse_boost.dir/rule
+
+.PHONY : test_reverse_boost
+
+# clean rule for target.
+test/CMakeFiles/test_reverse_boost.dir/clean:
+	$(MAKE) -f test/CMakeFiles/test_reverse_boost.dir/build.make test/CMakeFiles/test_reverse_boost.dir/clean
+.PHONY : test/CMakeFiles/test_reverse_boost.dir/clean
+
+#=============================================================================
 # Target rules for target test/CMakeFiles/test_vowels.dir
 
 # All Build rule for target.
 test/CMakeFiles/test_vowels.dir/all: src/CMakeFiles/stringutils.dir/all
 	$(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/depend
 	$(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=9,10,11 "Built target test_vowels"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=13,14,15 "Built target test_vowels"
 .PHONY : test/CMakeFiles/test_vowels.dir/all
 
 # Build rule for subdir invocation for target.
@@ -198,7 +285,7 @@ test/CMakeFiles/test_palindrome.dir/clean:
 test/CMakeFiles/test_reverse.dir/all: src/CMakeFiles/stringutils.dir/all
 	$(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/depend
 	$(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=6,7,8 "Built target test_reverse"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/CMakeFiles --progress-num=8,9,10 "Built target test_reverse"
 .PHONY : test/CMakeFiles/test_reverse.dir/all
 
 # Build rule for subdir invocation for target.

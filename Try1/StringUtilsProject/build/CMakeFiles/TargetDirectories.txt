@@ -6,6 +6,9 @@
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/src/CMakeFiles/test.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/src/CMakeFiles/stringutils.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/rebuild_cache.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_palindrome_boost.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_vowels_boost.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_reverse_boost.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/edit_cache.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_vowels.dir
