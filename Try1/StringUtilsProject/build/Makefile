@@ -135,17 +135,43 @@ stringutils/fast:
 .PHONY : stringutils/fast
 
 #=============================================================================
-# Target rules for targets named stringutils_tests_catch
+# Target rules for targets named test_vowels
 
 # Build rule for target.
-stringutils_tests_catch: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stringutils_tests_catch
-.PHONY : stringutils_tests_catch
+test_vowels: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_vowels
+.PHONY : test_vowels
 
 # fast build rule for target.
-stringutils_tests_catch/fast:
-	$(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/build
-.PHONY : stringutils_tests_catch/fast
+test_vowels/fast:
+	$(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/build
+.PHONY : test_vowels/fast
+
+#=============================================================================
+# Target rules for targets named test_palindrome
+
+# Build rule for target.
+test_palindrome: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_palindrome
+.PHONY : test_palindrome
+
+# fast build rule for target.
+test_palindrome/fast:
+	$(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/build
+.PHONY : test_palindrome/fast
+
+#=============================================================================
+# Target rules for targets named test_reverse
+
+# Build rule for target.
+test_reverse: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_reverse
+.PHONY : test_reverse
+
+# fast build rule for target.
+test_reverse/fast:
+	$(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/build
+.PHONY : test_reverse/fast
 
 # Help Target
 help:
@@ -157,7 +183,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... stringutils"
-	@echo "... stringutils_tests_catch"
+	@echo "... test_vowels"
+	@echo "... test_palindrome"
+	@echo "... test_reverse"
 .PHONY : help
 
 

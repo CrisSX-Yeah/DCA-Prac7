@@ -121,5 +121,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/stringutils.dir/DependInfo.cmake"
-  "test/CMakeFiles/stringutils_tests_catch.dir/DependInfo.cmake"
+  "test/CMakeFiles/test_vowels.dir/DependInfo.cmake"
+  "test/CMakeFiles/test_palindrome.dir/DependInfo.cmake"
+  "test/CMakeFiles/test_reverse.dir/DependInfo.cmake"
   )

@@ -122,19 +122,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/stringutils_tests_catch.dir/rule:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/stringutils_tests_catch.dir/rule
-.PHONY : test/CMakeFiles/stringutils_tests_catch.dir/rule
+test/CMakeFiles/test_vowels.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_vowels.dir/rule
+.PHONY : test/CMakeFiles/test_vowels.dir/rule
 
 # Convenience name for target.
-stringutils_tests_catch: test/CMakeFiles/stringutils_tests_catch.dir/rule
+test_vowels: test/CMakeFiles/test_vowels.dir/rule
 
-.PHONY : stringutils_tests_catch
+.PHONY : test_vowels
 
 # fast build rule for target.
-stringutils_tests_catch/fast:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/build
-.PHONY : stringutils_tests_catch/fast
+test_vowels/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/build
+.PHONY : test_vowels/fast
+
+# Convenience name for target.
+test/CMakeFiles/test_palindrome.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_palindrome.dir/rule
+.PHONY : test/CMakeFiles/test_palindrome.dir/rule
+
+# Convenience name for target.
+test_palindrome: test/CMakeFiles/test_palindrome.dir/rule
+
+.PHONY : test_palindrome
+
+# fast build rule for target.
+test_palindrome/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/build
+.PHONY : test_palindrome/fast
+
+# Convenience name for target.
+test/CMakeFiles/test_reverse.dir/rule:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reverse.dir/rule
+.PHONY : test/CMakeFiles/test_reverse.dir/rule
+
+# Convenience name for target.
+test_reverse: test/CMakeFiles/test_reverse.dir/rule
+
+.PHONY : test_reverse
+
+# fast build rule for target.
+test_reverse/fast:
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/build
+.PHONY : test_reverse/fast
 
 main.o: main.cpp.o
 
@@ -142,7 +172,9 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/main.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/main.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/main.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -151,7 +183,9 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/main.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/main.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/main.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -160,7 +194,9 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/main.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/main.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/main.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 test_palindrome.o: test_palindrome.cpp.o
@@ -169,7 +205,7 @@ test_palindrome.o: test_palindrome.cpp.o
 
 # target to build an object file
 test_palindrome.cpp.o:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_palindrome.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/test_palindrome.cpp.o
 .PHONY : test_palindrome.cpp.o
 
 test_palindrome.i: test_palindrome.cpp.i
@@ -178,7 +214,7 @@ test_palindrome.i: test_palindrome.cpp.i
 
 # target to preprocess a source file
 test_palindrome.cpp.i:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_palindrome.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/test_palindrome.cpp.i
 .PHONY : test_palindrome.cpp.i
 
 test_palindrome.s: test_palindrome.cpp.s
@@ -187,7 +223,7 @@ test_palindrome.s: test_palindrome.cpp.s
 
 # target to generate assembly for a file
 test_palindrome.cpp.s:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_palindrome.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_palindrome.dir/build.make test/CMakeFiles/test_palindrome.dir/test_palindrome.cpp.s
 .PHONY : test_palindrome.cpp.s
 
 test_reverse.o: test_reverse.cpp.o
@@ -196,7 +232,7 @@ test_reverse.o: test_reverse.cpp.o
 
 # target to build an object file
 test_reverse.cpp.o:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_reverse.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/test_reverse.cpp.o
 .PHONY : test_reverse.cpp.o
 
 test_reverse.i: test_reverse.cpp.i
@@ -205,7 +241,7 @@ test_reverse.i: test_reverse.cpp.i
 
 # target to preprocess a source file
 test_reverse.cpp.i:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_reverse.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/test_reverse.cpp.i
 .PHONY : test_reverse.cpp.i
 
 test_reverse.s: test_reverse.cpp.s
@@ -214,7 +250,7 @@ test_reverse.s: test_reverse.cpp.s
 
 # target to generate assembly for a file
 test_reverse.cpp.s:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_reverse.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_reverse.dir/build.make test/CMakeFiles/test_reverse.dir/test_reverse.cpp.s
 .PHONY : test_reverse.cpp.s
 
 test_vowels.o: test_vowels.cpp.o
@@ -223,7 +259,7 @@ test_vowels.o: test_vowels.cpp.o
 
 # target to build an object file
 test_vowels.cpp.o:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_vowels.cpp.o
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/test_vowels.cpp.o
 .PHONY : test_vowels.cpp.o
 
 test_vowels.i: test_vowels.cpp.i
@@ -232,7 +268,7 @@ test_vowels.i: test_vowels.cpp.i
 
 # target to preprocess a source file
 test_vowels.cpp.i:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_vowels.cpp.i
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/test_vowels.cpp.i
 .PHONY : test_vowels.cpp.i
 
 test_vowels.s: test_vowels.cpp.s
@@ -241,7 +277,7 @@ test_vowels.s: test_vowels.cpp.s
 
 # target to generate assembly for a file
 test_vowels.cpp.s:
-	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/stringutils_tests_catch.dir/build.make test/CMakeFiles/stringutils_tests_catch.dir/test_vowels.cpp.s
+	cd /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build && $(MAKE) -f test/CMakeFiles/test_vowels.dir/build.make test/CMakeFiles/test_vowels.dir/test_vowels.cpp.s
 .PHONY : test_vowels.cpp.s
 
 # Help Target
@@ -253,7 +289,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... stringutils_tests_catch"
+	@echo "... test_vowels"
+	@echo "... test_palindrome"
+	@echo "... test_reverse"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

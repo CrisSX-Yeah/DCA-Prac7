@@ -8,4 +8,6 @@
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/rebuild_cache.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/edit_cache.dir
 /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test.dir
-/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/stringutils_tests_catch.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_vowels.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_palindrome.dir
+/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/CMakeFiles/test_reverse.dir
