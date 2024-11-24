@@ -1,0 +1,60 @@
+DCA Practica 6 - DNI: 05988721G Alumno: Cristian Andrés Córdoba Silvestre
+
+Para la realizacion esta practica, se ha creado una clase StringUtils la cual maneja tres métodos:
+
+
+1-. std::string StringUtils::reverse(const std::string& str)
+
+Este metodo devuelve la string inversa correspondiente a la string pasada como parametro.
+
+
+2-. std::string StringUtils::reverse(const std::string& str)
+
+Este metodo comprueba si una string es palindroma.
+
+
+3-. int StringUtils::countVowels(const std::string& str)
+
+Este metodo devuelve el numero de vocales de una string.
+
+
+En esta practica se han creado, con catch2 y con boost::testing, múltiples test suites con múltiples tests en cada uno de ellos.
+
+Tanto los tests con catch2 como los tests con boost::testing se han integrado ambos con autoconf automake y 
+con cmake+ctest:
+
+-. Los tests correspondientes a catch2 son: test_palindrome.cpp, test_reverse.cpp y test_vowels.cpp.
+
+-. Los tests correspondientes a boost::testing son: test_palindrome_boost.cpp, test_reverse_boost.cpp y test_vowels_boost.cpp
+
+
+
+INSTRUCCIONES PARA COMPROBAR LA PRACTICA
+
+PARTE 1: Tests con autoconf automake
+
+1-. Desde el directorio raiz, ejecutamos la siguiente secuencia de comandos:
+
+    autoreconf -i
+    ./configure
+    make
+    make check
+
+
+Tras haber ejecutado "make check", veremos que han pasado seis unidades de test.
+
+
+PARTE 2: Tests con cmake+ctest
+
+1-. Desde el directorio raiz, ejecutamos:
+
+    cd build
+
+2-. Desde la carpeta "build", ejecutamos la siguiente secuencia de comandos:
+
+    cmake ..
+    make
+    make test
+
+Tras haber ejecutado "make test", veremos que han pasado seis unidades de test.
+
