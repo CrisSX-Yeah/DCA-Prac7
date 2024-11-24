@@ -540,7 +540,6 @@ config.status:1451: cd src       && sed -e '/# am--include-marker/d' Makefile   
 make: Nothing to be done for 'am--depfiles'.
 config.status:1456: $? = 0
 config.status:1451: cd test       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
-make: Nothing to be done for 'am--depfiles'.
 config.status:1456: $? = 0
 config.status:1374: executing libtool commands
 
@@ -657,7 +656,7 @@ lt_cv_truncate_bin='/usr/bin/dd bs=4096 count=1'
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing aclocal-1.16'
+ACLOCAL='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing aclocal-1.16'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -667,9 +666,9 @@ AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='1'
 AM_V='$(V)'
 AR='ar'
-AUTOCONF='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing autoconf'
-AUTOHEADER='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing autoheader'
-AUTOMAKE='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing automake-1.16'
+AUTOCONF='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing autoconf'
+AUTOHEADER='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing autoheader'
+AUTOMAKE='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing automake-1.16'
 AWK='gawk'
 CC='gcc'
 CCDEPMODE='depmode=gcc3'
@@ -706,7 +705,7 @@ LIPO=''
 LN_S='ln -s'
 LTLIBOBJS=''
 LT_SYS_LIBRARY_PATH=''
-MAKEINFO='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing makeinfo'
+MAKEINFO='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing makeinfo'
 MANIFEST_TOOL=':'
 MKDIR_P='/usr/bin/mkdir -p'
 NM='/usr/bin/nm -B'
@@ -765,7 +764,7 @@ host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/install-sh'
+install_sh='${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'

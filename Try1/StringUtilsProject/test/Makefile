@@ -88,9 +88,11 @@ POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
 check_PROGRAMS = test_reverse$(EXEEXT) test_vowels$(EXEEXT) \
-	test_palindrome$(EXEEXT)
+	test_palindrome$(EXEEXT) test_reverse_boost$(EXEEXT) \
+	test_vowels_boost$(EXEEXT) test_palindrome_boost$(EXEEXT)
 TESTS = test_reverse$(EXEEXT) test_vowels$(EXEEXT) \
-	test_palindrome$(EXEEXT)
+	test_palindrome$(EXEEXT) test_reverse_boost$(EXEEXT) \
+	test_vowels_boost$(EXEEXT) test_palindrome_boost$(EXEEXT)
 subdir = test
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
@@ -113,14 +115,29 @@ AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__v_lt_1 = 
+am_test_palindrome_boost_OBJECTS =  \
+	test_palindrome_boost-test_palindrome_boost.$(OBJEXT)
+test_palindrome_boost_OBJECTS = $(am_test_palindrome_boost_OBJECTS)
+test_palindrome_boost_DEPENDENCIES =  \
+	$(top_builddir)/src/libstringutils.la
 am_test_reverse_OBJECTS = test_reverse-test_reverse.$(OBJEXT) \
 	test_reverse-main.$(OBJEXT)
 test_reverse_OBJECTS = $(am_test_reverse_OBJECTS)
 test_reverse_DEPENDENCIES = $(top_builddir)/src/libstringutils.la
+am_test_reverse_boost_OBJECTS =  \
+	test_reverse_boost-test_reverse_boost.$(OBJEXT)
+test_reverse_boost_OBJECTS = $(am_test_reverse_boost_OBJECTS)
+test_reverse_boost_DEPENDENCIES =  \
+	$(top_builddir)/src/libstringutils.la
 am_test_vowels_OBJECTS = test_vowels-test_vowels.$(OBJEXT) \
 	test_vowels-main.$(OBJEXT)
 test_vowels_OBJECTS = $(am_test_vowels_OBJECTS)
 test_vowels_DEPENDENCIES = $(top_builddir)/src/libstringutils.la
+am_test_vowels_boost_OBJECTS =  \
+	test_vowels_boost-test_vowels_boost.$(OBJEXT)
+test_vowels_boost_OBJECTS = $(am_test_vowels_boost_OBJECTS)
+test_vowels_boost_DEPENDENCIES =  \
+	$(top_builddir)/src/libstringutils.la
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -138,10 +155,13 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/test_palindrome-main.Po \
 	./$(DEPDIR)/test_palindrome-test_palindrome.Po \
+	./$(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po \
 	./$(DEPDIR)/test_reverse-main.Po \
 	./$(DEPDIR)/test_reverse-test_reverse.Po \
+	./$(DEPDIR)/test_reverse_boost-test_reverse_boost.Po \
 	./$(DEPDIR)/test_vowels-main.Po \
-	./$(DEPDIR)/test_vowels-test_vowels.Po
+	./$(DEPDIR)/test_vowels-test_vowels.Po \
+	./$(DEPDIR)/test_vowels_boost-test_vowels_boost.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -161,10 +181,13 @@ AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(test_palindrome_SOURCES) $(test_reverse_SOURCES) \
-	$(test_vowels_SOURCES)
-DIST_SOURCES = $(test_palindrome_SOURCES) $(test_reverse_SOURCES) \
-	$(test_vowels_SOURCES)
+SOURCES = $(test_palindrome_SOURCES) $(test_palindrome_boost_SOURCES) \
+	$(test_reverse_SOURCES) $(test_reverse_boost_SOURCES) \
+	$(test_vowels_SOURCES) $(test_vowels_boost_SOURCES)
+DIST_SOURCES = $(test_palindrome_SOURCES) \
+	$(test_palindrome_boost_SOURCES) $(test_reverse_SOURCES) \
+	$(test_reverse_boost_SOURCES) $(test_vowels_SOURCES) \
+	$(test_vowels_boost_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -396,13 +419,13 @@ TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp \
 	$(top_srcdir)/test-driver
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
-AUTOCONF = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing autoconf
-AUTOHEADER = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing autoheader
-AUTOMAKE = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing automake-1.16
+AUTOCONF = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing autoconf
+AUTOHEADER = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing autoheader
+AUTOMAKE = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing automake-1.16
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -440,7 +463,7 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-MAKEINFO = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/missing makeinfo
+MAKEINFO = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -463,10 +486,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = strip
 VERSION = 1.0
-abs_builddir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/test
-abs_srcdir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/test
-abs_top_builddir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject
-abs_top_srcdir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject
+abs_builddir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/test
+abs_srcdir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/test
+abs_top_builddir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject
+abs_top_srcdir = /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -496,7 +519,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/StringUtilsProject/install-sh
+install_sh = ${SHELL} /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -517,6 +540,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
+
+# Catch2 tests
 test_reverse_SOURCES = test_reverse.cpp main.cpp
 test_reverse_CPPFLAGS = -I$(top_srcdir)/include
 test_reverse_LDADD = $(top_builddir)/src/libstringutils.la
@@ -526,6 +551,17 @@ test_vowels_LDADD = $(top_builddir)/src/libstringutils.la
 test_palindrome_SOURCES = test_palindrome.cpp main.cpp
 test_palindrome_CPPFLAGS = -I$(top_srcdir)/include
 test_palindrome_LDADD = $(top_builddir)/src/libstringutils.la
+
+# Boost.Test tests
+test_reverse_boost_SOURCES = test_reverse_boost.cpp
+test_reverse_boost_CPPFLAGS = -I$(top_srcdir)/include
+test_reverse_boost_LDADD = $(top_builddir)/src/libstringutils.la
+test_vowels_boost_SOURCES = test_vowels_boost.cpp
+test_vowels_boost_CPPFLAGS = -I$(top_srcdir)/include
+test_vowels_boost_LDADD = $(top_builddir)/src/libstringutils.la
+test_palindrome_boost_SOURCES = test_palindrome_boost.cpp
+test_palindrome_boost_CPPFLAGS = -I$(top_srcdir)/include
+test_palindrome_boost_LDADD = $(top_builddir)/src/libstringutils.la
 all: all-am
 
 .SUFFIXES:
@@ -573,13 +609,25 @@ test_palindrome$(EXEEXT): $(test_palindrome_OBJECTS) $(test_palindrome_DEPENDENC
 	@rm -f test_palindrome$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_palindrome_OBJECTS) $(test_palindrome_LDADD) $(LIBS)
 
+test_palindrome_boost$(EXEEXT): $(test_palindrome_boost_OBJECTS) $(test_palindrome_boost_DEPENDENCIES) $(EXTRA_test_palindrome_boost_DEPENDENCIES) 
+	@rm -f test_palindrome_boost$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(test_palindrome_boost_OBJECTS) $(test_palindrome_boost_LDADD) $(LIBS)
+
 test_reverse$(EXEEXT): $(test_reverse_OBJECTS) $(test_reverse_DEPENDENCIES) $(EXTRA_test_reverse_DEPENDENCIES) 
 	@rm -f test_reverse$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_reverse_OBJECTS) $(test_reverse_LDADD) $(LIBS)
 
+test_reverse_boost$(EXEEXT): $(test_reverse_boost_OBJECTS) $(test_reverse_boost_DEPENDENCIES) $(EXTRA_test_reverse_boost_DEPENDENCIES) 
+	@rm -f test_reverse_boost$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(test_reverse_boost_OBJECTS) $(test_reverse_boost_LDADD) $(LIBS)
+
 test_vowels$(EXEEXT): $(test_vowels_OBJECTS) $(test_vowels_DEPENDENCIES) $(EXTRA_test_vowels_DEPENDENCIES) 
 	@rm -f test_vowels$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_vowels_OBJECTS) $(test_vowels_LDADD) $(LIBS)
+
+test_vowels_boost$(EXEEXT): $(test_vowels_boost_OBJECTS) $(test_vowels_boost_DEPENDENCIES) $(EXTRA_test_vowels_boost_DEPENDENCIES) 
+	@rm -f test_vowels_boost$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(test_vowels_boost_OBJECTS) $(test_vowels_boost_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -589,10 +637,13 @@ distclean-compile:
 
 include ./$(DEPDIR)/test_palindrome-main.Po # am--include-marker
 include ./$(DEPDIR)/test_palindrome-test_palindrome.Po # am--include-marker
+include ./$(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po # am--include-marker
 include ./$(DEPDIR)/test_reverse-main.Po # am--include-marker
 include ./$(DEPDIR)/test_reverse-test_reverse.Po # am--include-marker
+include ./$(DEPDIR)/test_reverse_boost-test_reverse_boost.Po # am--include-marker
 include ./$(DEPDIR)/test_vowels-main.Po # am--include-marker
 include ./$(DEPDIR)/test_vowels-test_vowels.Po # am--include-marker
+include ./$(DEPDIR)/test_vowels_boost-test_vowels_boost.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -649,6 +700,20 @@ test_palindrome-main.obj: main.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_palindrome_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_palindrome-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
 
+test_palindrome_boost-test_palindrome_boost.o: test_palindrome_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_palindrome_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_palindrome_boost-test_palindrome_boost.o -MD -MP -MF $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Tpo -c -o test_palindrome_boost-test_palindrome_boost.o `test -f 'test_palindrome_boost.cpp' || echo '$(srcdir)/'`test_palindrome_boost.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Tpo $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po
+#	$(AM_V_CXX)source='test_palindrome_boost.cpp' object='test_palindrome_boost-test_palindrome_boost.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_palindrome_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_palindrome_boost-test_palindrome_boost.o `test -f 'test_palindrome_boost.cpp' || echo '$(srcdir)/'`test_palindrome_boost.cpp
+
+test_palindrome_boost-test_palindrome_boost.obj: test_palindrome_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_palindrome_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_palindrome_boost-test_palindrome_boost.obj -MD -MP -MF $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Tpo -c -o test_palindrome_boost-test_palindrome_boost.obj `if test -f 'test_palindrome_boost.cpp'; then $(CYGPATH_W) 'test_palindrome_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_palindrome_boost.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Tpo $(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po
+#	$(AM_V_CXX)source='test_palindrome_boost.cpp' object='test_palindrome_boost-test_palindrome_boost.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_palindrome_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_palindrome_boost-test_palindrome_boost.obj `if test -f 'test_palindrome_boost.cpp'; then $(CYGPATH_W) 'test_palindrome_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_palindrome_boost.cpp'; fi`
+
 test_reverse-test_reverse.o: test_reverse.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_reverse-test_reverse.o -MD -MP -MF $(DEPDIR)/test_reverse-test_reverse.Tpo -c -o test_reverse-test_reverse.o `test -f 'test_reverse.cpp' || echo '$(srcdir)/'`test_reverse.cpp
 	$(AM_V_at)$(am__mv) $(DEPDIR)/test_reverse-test_reverse.Tpo $(DEPDIR)/test_reverse-test_reverse.Po
@@ -677,6 +742,20 @@ test_reverse-main.obj: main.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_reverse-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
 
+test_reverse_boost-test_reverse_boost.o: test_reverse_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_reverse_boost-test_reverse_boost.o -MD -MP -MF $(DEPDIR)/test_reverse_boost-test_reverse_boost.Tpo -c -o test_reverse_boost-test_reverse_boost.o `test -f 'test_reverse_boost.cpp' || echo '$(srcdir)/'`test_reverse_boost.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_reverse_boost-test_reverse_boost.Tpo $(DEPDIR)/test_reverse_boost-test_reverse_boost.Po
+#	$(AM_V_CXX)source='test_reverse_boost.cpp' object='test_reverse_boost-test_reverse_boost.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_reverse_boost-test_reverse_boost.o `test -f 'test_reverse_boost.cpp' || echo '$(srcdir)/'`test_reverse_boost.cpp
+
+test_reverse_boost-test_reverse_boost.obj: test_reverse_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_reverse_boost-test_reverse_boost.obj -MD -MP -MF $(DEPDIR)/test_reverse_boost-test_reverse_boost.Tpo -c -o test_reverse_boost-test_reverse_boost.obj `if test -f 'test_reverse_boost.cpp'; then $(CYGPATH_W) 'test_reverse_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_reverse_boost.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_reverse_boost-test_reverse_boost.Tpo $(DEPDIR)/test_reverse_boost-test_reverse_boost.Po
+#	$(AM_V_CXX)source='test_reverse_boost.cpp' object='test_reverse_boost-test_reverse_boost.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_reverse_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_reverse_boost-test_reverse_boost.obj `if test -f 'test_reverse_boost.cpp'; then $(CYGPATH_W) 'test_reverse_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_reverse_boost.cpp'; fi`
+
 test_vowels-test_vowels.o: test_vowels.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_vowels-test_vowels.o -MD -MP -MF $(DEPDIR)/test_vowels-test_vowels.Tpo -c -o test_vowels-test_vowels.o `test -f 'test_vowels.cpp' || echo '$(srcdir)/'`test_vowels.cpp
 	$(AM_V_at)$(am__mv) $(DEPDIR)/test_vowels-test_vowels.Tpo $(DEPDIR)/test_vowels-test_vowels.Po
@@ -704,6 +783,20 @@ test_vowels-main.obj: main.cpp
 #	$(AM_V_CXX)source='main.cpp' object='test_vowels-main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_vowels-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
+
+test_vowels_boost-test_vowels_boost.o: test_vowels_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_vowels_boost-test_vowels_boost.o -MD -MP -MF $(DEPDIR)/test_vowels_boost-test_vowels_boost.Tpo -c -o test_vowels_boost-test_vowels_boost.o `test -f 'test_vowels_boost.cpp' || echo '$(srcdir)/'`test_vowels_boost.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_vowels_boost-test_vowels_boost.Tpo $(DEPDIR)/test_vowels_boost-test_vowels_boost.Po
+#	$(AM_V_CXX)source='test_vowels_boost.cpp' object='test_vowels_boost-test_vowels_boost.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_vowels_boost-test_vowels_boost.o `test -f 'test_vowels_boost.cpp' || echo '$(srcdir)/'`test_vowels_boost.cpp
+
+test_vowels_boost-test_vowels_boost.obj: test_vowels_boost.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT test_vowels_boost-test_vowels_boost.obj -MD -MP -MF $(DEPDIR)/test_vowels_boost-test_vowels_boost.Tpo -c -o test_vowels_boost-test_vowels_boost.obj `if test -f 'test_vowels_boost.cpp'; then $(CYGPATH_W) 'test_vowels_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_vowels_boost.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/test_vowels_boost-test_vowels_boost.Tpo $(DEPDIR)/test_vowels_boost-test_vowels_boost.Po
+#	$(AM_V_CXX)source='test_vowels_boost.cpp' object='test_vowels_boost-test_vowels_boost.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_vowels_boost_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o test_vowels_boost-test_vowels_boost.obj `if test -f 'test_vowels_boost.cpp'; then $(CYGPATH_W) 'test_vowels_boost.cpp'; else $(CYGPATH_W) '$(srcdir)/test_vowels_boost.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -925,6 +1018,27 @@ test_palindrome.log: test_palindrome$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test_reverse_boost.log: test_reverse_boost$(EXEEXT)
+	@p='test_reverse_boost$(EXEEXT)'; \
+	b='test_reverse_boost'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test_vowels_boost.log: test_vowels_boost$(EXEEXT)
+	@p='test_vowels_boost$(EXEEXT)'; \
+	b='test_vowels_boost'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test_palindrome_boost.log: test_palindrome_boost$(EXEEXT)
+	@p='test_palindrome_boost$(EXEEXT)'; \
+	b='test_palindrome_boost'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 .test.log:
 	@p='$<'; \
 	$(am__set_b); \
@@ -1020,10 +1134,13 @@ clean-am: clean-checkPROGRAMS clean-generic clean-libtool \
 distclean: distclean-am
 		-rm -f ./$(DEPDIR)/test_palindrome-main.Po
 	-rm -f ./$(DEPDIR)/test_palindrome-test_palindrome.Po
+	-rm -f ./$(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po
 	-rm -f ./$(DEPDIR)/test_reverse-main.Po
 	-rm -f ./$(DEPDIR)/test_reverse-test_reverse.Po
+	-rm -f ./$(DEPDIR)/test_reverse_boost-test_reverse_boost.Po
 	-rm -f ./$(DEPDIR)/test_vowels-main.Po
 	-rm -f ./$(DEPDIR)/test_vowels-test_vowels.Po
+	-rm -f ./$(DEPDIR)/test_vowels_boost-test_vowels_boost.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1071,10 +1188,13 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 		-rm -f ./$(DEPDIR)/test_palindrome-main.Po
 	-rm -f ./$(DEPDIR)/test_palindrome-test_palindrome.Po
+	-rm -f ./$(DEPDIR)/test_palindrome_boost-test_palindrome_boost.Po
 	-rm -f ./$(DEPDIR)/test_reverse-main.Po
 	-rm -f ./$(DEPDIR)/test_reverse-test_reverse.Po
+	-rm -f ./$(DEPDIR)/test_reverse_boost-test_reverse_boost.Po
 	-rm -f ./$(DEPDIR)/test_vowels-main.Po
 	-rm -f ./$(DEPDIR)/test_vowels-test_vowels.Po
+	-rm -f ./$(DEPDIR)/test_vowels_boost-test_vowels_boost.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
