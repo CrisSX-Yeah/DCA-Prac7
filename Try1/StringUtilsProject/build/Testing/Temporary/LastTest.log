@@ -1,0 +1,21 @@
+Start testing: Nov 24 01:41 CET
+----------------------------------------------------------
+1/1 Testing: StringUtilsTests_Catch
+1/1 Test: StringUtilsTests_Catch
+Command: "/home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test/stringutils_tests_catch"
+Directory: /home/bledyx/home/UA/cuarto/primer-cuatri/DCA/practicas/practica6/Try1/StringUtilsProject/build/test
+"StringUtilsTests_Catch" start time: Nov 24 01:41 CET
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (19 assertions in 12 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StringUtilsTests_Catch" end time: Nov 24 01:41 CET
+"StringUtilsTests_Catch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 24 01:41 CET
