@@ -1,7 +1,0 @@
-ReverseTests 1 0.00214564
-PalindromeTests 1 0.00263286
-VowelTests 1 0.00282622
-ReverseTests_Boost 1 0.00754192
-PalindromeTests_Boost 1 0.00432403
-VowelTests_Boost 1 0.00441691
----
